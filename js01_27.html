@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var data = [{"id":1,"name":"tom"},{"id":2,"name":"john"},{"id":3,"name":"mike"},{"id":4,"name":"lisa"},{"id":5,"name":"lucy"}]
+   var ul = document.createElement("ul");
+    for(var i = 0; i < data.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = data[i].name;
+        ul.appendChild(li);
+        var span = document.createElement("span");
+        span.innerText = "删除";
+        span.setAttribute("data-index",i);
+        li.appendChild(span);
+        span.onclick = function () {
+            var index = this.getAttribute("data-index");
+            data.splice(index,1);
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            console.log(data.length);
+        }
+    }
+    document.body.appendChild(ul);
+</script>
+</body>
+</html>

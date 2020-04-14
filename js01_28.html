@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="div1">-->
+<!--    div1-->
+<!--</div>-->
+<input type="text" id="txtName"/>
+<script>
+    // var div1 = document.getElementById("div1");
+    // div1.setAttribute("title","这是新增的DIV1");
+    // console.log(div1.getAttribute("title"));
+var txtName = document.getElementById("txtName");
+txtName.setAttribute("title","这里是txtName");
+var placeHolder = document.createAttribute("placeHolder");
+placeHolder.nodeValue = "请输入姓名";
+txtName.setAttributeNode(placeHolder);
+</script>
+</body>
+</html>
